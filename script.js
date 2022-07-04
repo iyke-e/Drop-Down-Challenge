@@ -18,19 +18,10 @@ if (times) {
 
 // javasript for the drop down
 
+const drop = document.getElementsByClassName('drp-container')
 
-function dropdown() {
-    const feature = document.getElementById('feature');
-    const drop1 = document.getElementById('active-drp')
-
-    if (drop1.style.display = 'none') {
-        feature.addEventListener('click', () => {
-            drop1.classList.add = 'dropdown'
-        })
-    } else {
-        feature.addEventListener('click', () => {
-            drop1.classList.remove = 'dropdown'
-        })
-    }
-
+for (i = 0; i < drop.length; i++) {
+    drop[i].addEventListener('click', function() {
+        this.classList.toggle('active')
+    })
 }
