@@ -262,6 +262,7 @@ a {
         justify-content: space-between;
         margin-top: 2em;
         padding: 0 20px;
+        gap: 1em;
     }
     .icons img {
         width: 60px;
