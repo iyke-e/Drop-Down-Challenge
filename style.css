@@ -13,7 +13,6 @@
 body {
     font-family: 'Epilogue', sans-serif;
     background-color: var(--Almost-White);
-    max-height: 100vh;
 }
 
 h1 {
@@ -102,8 +101,13 @@ a {
     width: 7em;
     border-radius: 10px;
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
-    margin-top: 0.7em;
+    margin-top: 0.2em;
     transition: 0.5s;
+}
+
+.drp-container:hover .drp-down1,
+.drp-container:hover .drp-down2 {
+    display: grid;
 }
 
 .drp-down1 {
@@ -113,11 +117,6 @@ a {
 
 .drp-down1 img {
     padding-right: 10px;
-}
-
-.drp-container:hover .drp-down1,
-.drp-container:hover .drp-down2 {
-    display: grid;
 }
 
 .landing {
@@ -132,7 +131,7 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    gap: 4em;
+    gap: 2em;
 }
 
 .side-pics {
@@ -191,26 +190,36 @@ a {
     .left-row,
     .right-nav {
         display: block;
-        padding-bottom: 40px;
+        margin-bottom: 40px;
     }
     .right-nav {
         text-align: center;
     }
     .left-row li,
     .right-nav li {
-        margin-block: 2em;
+        margin-block: 1em;
+    }
+    .left-row li ul li,
+    .right-nav li ul li {
+        margin-block: 0.5em;
     }
     .drp-down1,
     .drp-down2 {
-        display: none;
+        display: block;
+        height: 0;
+        overflow-y: auto;
         position: relative;
         background-color: transparent;
-        padding: 0.5em 1em;
-        width: 100%;
+        padding: 0;
         box-shadow: none;
-        margin-top: 0.2em;
+        /* margin-top: 0.2em; */
         transition: 0.5s;
         transform: none;
+    }
+    .drp-container.active .drp-down1,
+    .drp-container.active .drp-down2 {
+        height: 150px;
+        padding: 0.5em 1em;
     }
     .dropdown {
         display: block;
@@ -261,8 +270,7 @@ a {
         display: flex;
         justify-content: space-between;
         margin-top: 2em;
-        padding: 0 20px;
-        gap: 1em;
+        padding: 0 10px;
     }
     .icons img {
         width: 60px;
